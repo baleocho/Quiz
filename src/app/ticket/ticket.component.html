@@ -1,0 +1,601 @@
+<div class="container shadow-sm rounded">
+  <div class="row p-4 mb-3">
+    <div class="col-12 text-center">
+      <h6 class="m-0" style="text-align:right; display:block;"><a href="#" class="btn btn-secondary rounded-circle"
+          data-toggle="modal" data-target="#calificar"> ? </a></h6>
+      <h2 style="display:block;">Quiz</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container shadow-sm rounded">
+  <div class="row p-4">
+    <div *ngIf="!startQuiz" class="col align-self-center ">
+      <h5>Important</h5>
+      <p>This is the first test, you have time to answer each question, then the question will be incorrect
+        answer. You can not go back or change your answers.</p>
+      <div (click)="onStartQuiz()" class="btn btn-primary btn-block">Start Quiz</div>
+    </div>
+    <div *ngIf="startQuiz" class="col align-self-center ">
+      <form class="needs-validation">
+<!--QUESTION1-->
+        <div *ngIf="view1">
+          <h3 class="mt-3">
+            <label for="nombrecliente">Question 1</label>
+            <span class="text-info" style="float:right;">{{timer01}} s</span>
+          </h3>
+          <hr>
+          <div class="custom-control custom-radio">
+            <input (click)="question1(1)" [attr.disabled]="inputsQuestion1Disable ? '' : null" type="radio" id="q1a1"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-success text-white' : inputsQuestion1Disable}" class="custom-control-label"
+              for="q1a1">1</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question1(0)" [attr.disabled]="inputsQuestion1Disable ? '' : null" type="radio" id="q1a2"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion1Disable}" class="custom-control-label"
+              for="q1a2">2</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question1(0)" [attr.disabled]="inputsQuestion1Disable ? '' : null" type="radio" id="q1a3"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion1Disable}" class="custom-control-label"
+              for="q1a3">3</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question1(0)" [attr.disabled]="inputsQuestion1Disable ? '' : null" type="radio" id="q1a4"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion1Disable}" class="custom-control-label"
+              for="q1a4">4</label>
+          </div>
+        </div>
+<!--QUESTION2-->
+        <div *ngIf="view2">
+          <h3 class="mt-3">
+            <label for="nombrecliente">Question 2</label>
+            <span class="text-info" style="float:right;">{{timer02}} s</span>
+          </h3>
+          <hr>
+          <div class="custom-control custom-radio">
+            <input (click)="question2(1)" [attr.disabled]="inputsQuestion2Disable ? '' : null" type="radio" id="q2a1"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-success text-white' : inputsQuestion2Disable}" class="custom-control-label"
+              for="q2a1">1</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question2(0)" [attr.disabled]="inputsQuestion2Disable ? '' : null" type="radio" id="q2a2"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion2Disable}" class="custom-control-label"
+              for="q2a2">2</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question2(0)" [attr.disabled]="inputsQuestion2Disable ? '' : null" type="radio" id="q2a3"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion2Disable}" class="custom-control-label"
+              for="q2a3">3</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question2(0)" [attr.disabled]="inputsQuestion2Disable ? '' : null" type="radio" id="q2a4"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion2Disable}" class="custom-control-label"
+              for="q2a4">4</label>
+          </div>
+        </div>
+<!--QUESTION3-->
+        <div *ngIf="view3">
+          <h3 class="mt-3">
+            <label for="nombrecliente">Question 3</label>
+            <span class="text-info" style="float:right;">{{timer03}} s</span>
+          </h3>
+          <hr>
+          <div class="custom-control custom-radio">
+            <input (click)="question3(1)" [attr.disabled]="inputsQuestion3Disable ? '' : null" type="radio" id="q3a1"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-success text-white' : inputsQuestion3Disable}" class="custom-control-label"
+              for="q3a1">1</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question3(0)" [attr.disabled]="inputsQuestion3Disable ? '' : null" type="radio" id="q3a2"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion3Disable}" class="custom-control-label"
+              for="q3a2">2</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question3(0)" [attr.disabled]="inputsQuestion3Disable ? '' : null" type="radio" id="q3a3"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion3Disable}" class="custom-control-label"
+              for="q3a3">3</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question3(0)" [attr.disabled]="inputsQuestion3Disable ? '' : null" type="radio" id="q3a4"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion3Disable}" class="custom-control-label"
+              for="q3a4">4</label>
+          </div>
+        </div>
+<!--QUESTION4-->
+        <div *ngIf="view4">
+          <h3 class="mt-3">
+            <label for="nombrecliente">Question 4</label>
+            <span class="text-info" style="float:right;">{{timer04}} s</span>
+          </h3>
+          <hr>
+          <div class="custom-control custom-radio">
+            <input (click)="question4(1)" [attr.disabled]="inputsQuestion4Disable ? '' : null" type="radio" id="q4a1"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-success text-white' : inputsQuestion4Disable}" class="custom-control-label"
+              for="q4a1">1</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question4(0)" [attr.disabled]="inputsQuestion4Disable ? '' : null" type="radio" id="q4a2"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion4Disable}" class="custom-control-label"
+              for="q4a2">2</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question4(0)" [attr.disabled]="inputsQuestion4Disable ? '' : null" type="radio" id="q4a3"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion4Disable}" class="custom-control-label"
+              for="q4a3">3</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question4(0)" [attr.disabled]="inputsQuestion4Disable ? '' : null" type="radio" id="q4a4"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion4Disable}" class="custom-control-label"
+              for="q4a4">4</label>
+          </div>
+        </div>
+<!--QUESTION5-->
+        <div *ngIf="view5">
+          <h3 class="mt-3">
+            <label for="nombrecliente">Question 3</label>
+            <span class="text-info" style="float:right;">{{timer05}} s</span>
+          </h3>
+          <hr>
+          <div class="custom-control custom-radio">
+            <input (click)="question5(1)" [attr.disabled]="inputsQuestion5Disable ? '' : null" type="radio" id="q5a1"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-success text-white' : inputsQuestion5Disable}" class="custom-control-label"
+              for="q5a1">1</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question5(0)" [attr.disabled]="inputsQuestion5Disable ? '' : null" type="radio" id="q5a2"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion5Disable}" class="custom-control-label"
+              for="q5a2">2</label>
+          </div>
+        </div>
+<!--QUESTION6-->
+        <div *ngIf="view6">
+          <h3 class="mt-3">
+            <label for="nombrecliente">Question 3</label>
+            <span class="text-info" style="float:right;">{{timer06}} s</span>
+          </h3>
+          <hr>
+          <div class="custom-control custom-radio">
+            <input (click)="question6(1)" [attr.disabled]="inputsQuestion6Disable ? '' : null" type="radio" id="q6a1"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-success text-white' : inputsQuestion6Disable}" class="custom-control-label"
+              for="q6a1">1</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question6(0)" [attr.disabled]="inputsQuestion6Disable ? '' : null" type="radio" id="q6a2"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion6Disable}" class="custom-control-label"
+              for="q6a2">2</label>
+          </div>
+        </div>
+<!--QUESTION7-->
+        <div *ngIf="view7">
+          <h3 class="mt-3">
+            <label for="nombrecliente">Question 3</label>
+            <span class="text-info" style="float:right;">{{timer07}} s</span>
+          </h3>
+          <hr>
+          <div class="custom-control custom-radio">
+            <input (click)="question7(1)" [attr.disabled]="inputsQuestion7Disable ? '' : null" type="radio" id="q7a1"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-success text-white' : inputsQuestion7Disable}" class="custom-control-label"
+              for="q7a1">1</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question7(0)" [attr.disabled]="inputsQuestion7Disable ? '' : null" type="radio" id="q7a2"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion7Disable}" class="custom-control-label"
+              for="q7a2">2</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question7(0)" [attr.disabled]="inputsQuestion7Disable ? '' : null" type="radio" id="q7a3"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion7Disable}" class="custom-control-label"
+              for="q7a3">3</label>
+          </div>
+        </div>
+<!--QUESTION8-->
+        <div *ngIf="view8">
+          <h3 class="mt-3">
+            <label for="nombrecliente">Question 3</label>
+            <span class="text-info" style="float:right;">{{timer08}} s</span>
+          </h3>
+          <hr>
+          <div class="custom-control custom-radio">
+            <input (click)="question8(1)" [attr.disabled]="inputsQuestion8Disable ? '' : null" type="radio" id="q8a1"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-success text-white' : inputsQuestion8Disable}" class="custom-control-label"
+              for="q8a1">1</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question8(0)" [attr.disabled]="inputsQuestion8Disable ? '' : null" type="radio" id="q8a2"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion8Disable}" class="custom-control-label"
+              for="q8a2">2</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question8(0)" [attr.disabled]="inputsQuestion8Disable ? '' : null" type="radio" id="q8a3"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion8Disable}" class="custom-control-label"
+              for="q8a3">3</label>
+          </div>      
+        </div>
+<!--QUESTION9-->
+        <div *ngIf="view9">
+          <h3 class="mt-3">
+            <label for="nombrecliente">Question 3</label>
+            <span class="text-info" style="float:right;">{{timer09}} s</span>
+          </h3>
+          <hr>
+          <div class="custom-control custom-radio">
+            <input (click)="question9(1)" [attr.disabled]="inputsQuestion9Disable ? '' : null" type="radio" id="q9a1"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-success text-white' : inputsQuestion9Disable}" class="custom-control-label"
+              for="q9a1">1</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question9(0)" [attr.disabled]="inputsQuestion9Disable ? '' : null" type="radio" id="q9a2"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion9Disable}" class="custom-control-label"
+              for="q9a2">2</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input (click)="question9(0)" [attr.disabled]="inputsQuestion9Disable ? '' : null" type="radio" id="q9a3"
+              class="custom-control-input">
+            <label [ngClass]="{'bg-danger text-white' : inputsQuestion9Disable}" class="custom-control-label"
+              for="q9a3">3</label>
+          </div>      
+        </div>
+<!--QUESTION10-->
+<div *ngIf="view10">
+    <h3 class="mt-3">
+      <label for="nombrecliente">Question 3</label>
+      <span class="text-info" style="float:right;">{{timer10}} s</span>
+    </h3>
+    <hr>
+    <div class="custom-control custom-radio">
+      <input (click)="question10(1)" [attr.disabled]="inputsQuestion10Disable ? '' : null" type="radio" id="q10a1"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-success text-white' : inputsQuestion10Disable}" class="custom-control-label"
+        for="q10a1">1</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question10(0)" [attr.disabled]="inputsQuestion10Disable ? '' : null" type="radio" id="q10a2"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion10Disable}" class="custom-control-label"
+        for="q10a2">2</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question10(0)" [attr.disabled]="inputsQuestion10Disable ? '' : null" type="radio" id="q10a3"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion10Disable}" class="custom-control-label"
+        for="q10a3">3</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question10(0)" [attr.disabled]="inputsQuestion3Disable ? '' : null" type="radio" id="q10a4"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion10Disable}" class="custom-control-label"
+        for="q10a4">4</label>
+    </div>
+  </div>
+<!--QUESTION11-->
+<div *ngIf="view11">
+    <h3 class="mt-3">
+      <label for="nombrecliente">Question 11</label>
+      <span class="text-info" style="float:right;">{{timer11}} s</span>
+    </h3>
+    <hr>
+    <div class="custom-control custom-radio">
+      <input (click)="question11(1)" [attr.disabled]="inputsQuestion11Disable ? '' : null" type="radio" id="q11a1"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-success text-white' : inputsQuestion11Disable}" class="custom-control-label"
+        for="q11a1">1</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question11(0)" [attr.disabled]="inputsQuestion11Disable ? '' : null" type="radio" id="q11a2"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion11Disable}" class="custom-control-label"
+        for="q11a2">2</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question11(0)" [attr.disabled]="inputsQuestion11Disable ? '' : null" type="radio" id="q11a3"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion11Disable}" class="custom-control-label"
+        for="q11a3">3</label>
+    </div>
+  </div>  
+<!--QUESTION12-->
+<div *ngIf="view12">
+    <h3 class="mt-3">
+      <label for="nombrecliente">Question 12</label>
+      <span class="text-info" style="float:right;">{{timer12}} s</span>
+    </h3>
+    <hr>
+    <div class="custom-control custom-radio">
+      <input (click)="question12(1)" [attr.disabled]="inputsQuestion12Disable ? '' : null" type="radio" id="q12a1"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-success text-white' : inputsQuestion12Disable}" class="custom-control-label"
+        for="q12a1">1</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question12(0)" [attr.disabled]="inputsQuestion12Disable ? '' : null" type="radio" id="q12a2"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion12Disable}" class="custom-control-label"
+        for="q12a2">2</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question12(0)" [attr.disabled]="inputsQuestion12Disable ? '' : null" type="radio" id="q12a3"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion12Disable}" class="custom-control-label"
+        for="q12a3">3</label>
+    </div>
+  </div>
+<!--QUESTION13-->
+<div *ngIf="view13">
+    <h3 class="mt-3">
+      <label for="nombrecliente">Question 13</label>
+      <span class="text-info" style="float:right;">{{timer13}} s</span>
+    </h3>
+    <hr>
+    <div class="custom-control custom-radio">
+      <input (click)="question13(1)" [attr.disabled]="inputsQuestion13Disable ? '' : null" type="radio" id="q13a1"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-success text-white' : inputsQuestion13Disable}" class="custom-control-label"
+        for="q13a1">1</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question13(0)" [attr.disabled]="inputsQuestion13Disable ? '' : null" type="radio" id="q13a2"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion13Disable}" class="custom-control-label"
+        for="q13a2">2</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question13(0)" [attr.disabled]="inputsQuestion13Disable ? '' : null" type="radio" id="q13a3"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion13Disable}" class="custom-control-label"
+        for="q13a3">3</label>
+    </div>
+  </div>  
+<!--QUESTION14-->
+<div *ngIf="view14">
+    <h3 class="mt-3">
+      <label for="nombrecliente">Question 14</label>
+      <span class="text-info" style="float:right;">{{timer14}} s</span>
+    </h3>
+    <hr>
+    <div class="custom-control custom-radio">
+      <input (click)="question14(1)" [attr.disabled]="inputsQuestion14Disable ? '' : null" type="radio" id="q14a1"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-success text-white' : inputsQuestion14Disable}" class="custom-control-label"
+        for="q14a1">1</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question14(0)" [attr.disabled]="inputsQuestion14Disable ? '' : null" type="radio" id="q14a2"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion14Disable}" class="custom-control-label"
+        for="q14a2">2</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question14(0)" [attr.disabled]="inputsQuestion14Disable ? '' : null" type="radio" id="q14a3"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion14Disable}" class="custom-control-label"
+        for="q14a3">3</label>
+    </div>
+  </div>  
+<!--QUESTION15-->
+<div *ngIf="view15">
+    <h3 class="mt-3">
+      <label for="nombrecliente">Question 15</label>
+      <span class="text-info" style="float:right;">{{timer15}} s</span>
+    </h3>
+    <hr>
+    <div class="custom-control custom-radio">
+      <input (click)="question15(1)" [attr.disabled]="inputsQuestion15Disable ? '' : null" type="radio" id="q15a1"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-success text-white' : inputsQuestion15Disable}" class="custom-control-label"
+        for="q15a1">1</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question15(0)" [attr.disabled]="inputsQuestion15Disable ? '' : null" type="radio" id="q15a2"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion15Disable}" class="custom-control-label"
+        for="q15a2">2</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question15(0)" [attr.disabled]="inputsQuestion15Disable ? '' : null" type="radio" id="q15a3"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion15Disable}" class="custom-control-label"
+        for="q15a3">3</label>
+    </div>
+  </div>  
+<!--QUESTION16-->
+<div *ngIf="view16">
+    <h3 class="mt-3">
+      <label for="nombrecliente">Question 16</label>
+      <span class="text-info" style="float:right;">{{timer16}} s</span>
+    </h3>
+    <hr>
+    <div class="custom-control custom-radio">
+      <input (click)="question16(1)" [attr.disabled]="inputsQuestion16Disable ? '' : null" type="radio" id="q16a1"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-success text-white' : inputsQuestion16Disable}" class="custom-control-label"
+        for="q16a1">1</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question16(0)" [attr.disabled]="inputsQuestion16Disable ? '' : null" type="radio" id="q16a2"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion16Disable}" class="custom-control-label"
+        for="q16a2">2</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question16(0)" [attr.disabled]="inputsQuestion16Disable ? '' : null" type="radio" id="q16a3"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion16Disable}" class="custom-control-label"
+        for="q16a3">3</label>
+    </div>
+  </div>  
+<!--QUESTION17-->
+<div *ngIf="view17">
+    <h3 class="mt-3">
+      <label for="nombrecliente">Question 17</label>
+      <span class="text-info" style="float:right;">{{timer17}} s</span>
+    </h3>
+    <hr>
+    <div class="custom-control custom-radio">
+      <input (click)="question17(1)" [attr.disabled]="inputsQuestion17Disable ? '' : null" type="radio" id="q17a1"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-success text-white' : inputsQuestion17Disable}" class="custom-control-label"
+        for="q17a1">1</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question17(0)" [attr.disabled]="inputsQuestion17Disable ? '' : null" type="radio" id="q17a2"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion17Disable}" class="custom-control-label"
+        for="q17a2">2</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question17(0)" [attr.disabled]="inputsQuestion17Disable ? '' : null" type="radio" id="q17a3"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion17Disable}" class="custom-control-label"
+        for="q17a3">3</label>
+    </div>
+  </div>  
+<!--QUESTION18-->
+<div *ngIf="view18">
+    <h3 class="mt-3">
+      <label for="nombrecliente">Question 18</label>
+      <span class="text-info" style="float:right;">{{timer18}} s</span>
+    </h3>
+    <hr>
+    <div class="custom-control custom-radio">
+      <input (click)="question18(1)" [attr.disabled]="inputsQuestion18Disable ? '' : null" type="radio" id="q18a1"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-success text-white' : inputsQuestion18Disable}" class="custom-control-label"
+        for="q18a1">1</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question18(0)" [attr.disabled]="inputsQuestion18Disable ? '' : null" type="radio" id="q18a2"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion18Disable}" class="custom-control-label"
+        for="q18a2">2</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question18(0)" [attr.disabled]="inputsQuestion18Disable ? '' : null" type="radio" id="q18a3"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion18Disable}" class="custom-control-label"
+        for="q18a3">3</label>
+    </div>
+  </div>  
+<!--QUESTION19-->
+<div *ngIf="view19">
+    <h3 class="mt-3">
+      <label for="nombrecliente">Question 19</label>
+      <span class="text-info" style="float:right;">{{timer19}} s</span>
+    </h3>
+    <hr>
+    <div class="custom-control custom-radio">
+      <input (click)="question19(1)" [attr.disabled]="inputsQuestion19Disable ? '' : null" type="radio" id="q19a1"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-success text-white' : inputsQuestion19Disable}" class="custom-control-label"
+        for="q19a1">1</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question19(0)" [attr.disabled]="inputsQuestion19Disable ? '' : null" type="radio" id="q19a2"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion19Disable}" class="custom-control-label"
+        for="q19a2">2</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question19(0)" [attr.disabled]="inputsQuestion19Disable ? '' : null" type="radio" id="q19a3"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion19Disable}" class="custom-control-label"
+        for="q19a3">3</label>
+    </div>
+  </div>  
+<!--QUESTION20-->
+<div *ngIf="view20">
+    <h3 class="mt-3">
+      <label for="nombrecliente">Question 20</label>
+      <span class="text-info" style="float:right;">{{timer20}} s</span>
+    </h3>
+    <hr>
+    <div class="custom-control custom-radio">
+      <input (click)="question20(1)" [attr.disabled]="inputsQuestion20Disable ? '' : null" type="radio" id="q20a1"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-success text-white' : inputsQuestion20Disable}" class="custom-control-label"
+        for="q20a1">1</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question20(0)" [attr.disabled]="inputsQuestion20Disable ? '' : null" type="radio" id="q20a2"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion20Disable}" class="custom-control-label"
+        for="q20a2">2</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input (click)="question20(0)" [attr.disabled]="inputsQuestion20Disable ? '' : null" type="radio" id="q20a3"
+        class="custom-control-input">
+      <label [ngClass]="{'bg-danger text-white' : inputsQuestion20Disable}" class="custom-control-label"
+        for="q20a3">3</label>
+    </div>
+  </div>  
+        <div class="row">
+          <div class="col-12">
+            <button [ngClass]=" { 'btn-default' : buttonNext }" (click)="onNext()"
+              class="btn btn-block btn-primary mt-3" type="submit">Siguiente</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal CALIFICAR -->
+<div class="modal fade" id="calificar" tabindex="-1" role="dialog" aria-labelledby="calificarModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="calificarModalLabel">Help</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Information</h5>
+        <hr>
+        <p>This is the first test, you have time to answer each question, then the question will be incorrect
+          answer. You can not go back or change your answers.</p>
+        <div>
+          <h5>Answers</h5>
+          <hr>
+          <p>Pregunta 1: {{aswer1==1 ? "Correct":"Incorrect"}}</p>
+          <p>Pregunta 2: {{aswer2==1 ? "Correct":"Incorrect"}}</p>
+          <p>Pregunta 3: {{aswer3==1 ? "Correct":"Incorrect"}}</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

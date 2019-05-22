@@ -1,0 +1,12 @@
+.bg-light-trasparent{
+    background: rgba(0, 0, 0, .2);
+}
+.bg-light-trasparent-btn{
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    transition-duration: 2s !important;
+    cursor: pointer;
+}
+.bg-light-trasparent-btn:hover{
+    background: rgba(0, 0, 0, .5);
+}
