@@ -3,25 +3,30 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
-import { FormularioComponent } from './formulario/formulario.component';
+import { BarraTituloComponent } from './barra-titulo/barra-titulo.component';
 import { CabeceroComponent } from './cabecero/cabecero.component';
 import { TicketComponent } from './ticket/ticket.component';
 
 import { ScrollEventModule } from 'ngx-scroll-event';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from '../services/http.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormularioComponent,
+    BarraTituloComponent,
     CabeceroComponent,
     TicketComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ScrollEventModule
+    ScrollEventModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

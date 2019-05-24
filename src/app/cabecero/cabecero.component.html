@@ -1,43 +1,176 @@
 <div class="container-fluid bg-light-trasparent text-right" style="position:fixed; z-index: 1;">
-    <div class="container p-0">
-        <div class="row">
-            <div class="col-6">
-                <img id="img-menu" src="assets/Quiz_bg.png" style="float:left; height:100%;" >
-            </div>
-            <div class="col-6">
-                <div class="row" style="height:100%;">
-                  <div class="col-6"></div>
-                    <div class="col-6 pt-3" style="float:right;">
-                        <div class="btn btn-outline-light bg-light-trasparent-btn" data-toggle="modal" data-target="#estadisticas">Admin</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="cabecero">
-    <div class="presupuesto mt-4">
-        <div class="presupuesto_titulo mt-4">
-        </div>
-    </div>
-</div>
-
-  <!-- Modal ESTADISTICAS -->
-  <div class="modal fade" id="estadisticas" tabindex="-1" role="dialog" aria-labelledby="estadisticasModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="estadisticasModalLabel">Admin</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
+  <div class="container p-0">
+    <div class="row">
+      <div class="col-6">
+        <img id="img-menu" src="assets/Quiz_bg.png" style="float:left; height:100%;">
+      </div>
+      <div class="col-6">
+        <div class="row" style="height:100%;">
+          <div class="col-6"></div>
+          <div class="col-6 pt-3" style="float:right;">
+            <div class="btn btn-outline-light bg-light-trasparent-btn" data-toggle="modal" data-target="#estadisticas">Admin</div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<div class="cabecero">
+  <div class="presupuesto mt-4">
+    <div class="presupuesto_titulo mt-4">
+    </div>
+  </div>
+</div>
+
+<!-- Modal ADMIN -->
+<div class="modal fade" id="estadisticas" tabindex="-1" role="dialog" aria-labelledby="estadisticasModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="estadisticasModalLabel">Admin Tools</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6>Change timers</h6>
+        <hr>
+        <div class="row">
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q1">Question 1</label>
+              <input #q1 type="number" class="form-control" id="q1" value="{{timer01}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q2">Question 2</label>
+              <input #q2 type="number" class="form-control" id="q2" value="{{timer02}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q3">Question 3</label>
+              <input #q3 type="number" class="form-control" id="q3" value="{{timer03}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q4">Question 4</label>
+              <input #q4 type="number" class="form-control" id="q4" value="{{timer04}}">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q5">Question 5</label>
+              <input #q5 type="number" class="form-control" id="q5" value="{{timer05}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q6">Question 6</label>
+              <input #q6 type="number" class="form-control" id="q6" value="{{timer06}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q7">Question 7</label>
+              <input #q7 type="number" class="form-control" id="q7" value="{{timer07}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q8">Question 8</label>
+              <input #q8 type="number" class="form-control" id="q8" value="{{timer08}}">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q9">Question 9</label>
+              <input #q9 type="number" class="form-control" id="q9" value="{{timer09}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q10">Question 10</label>
+              <input #q10 type="number" class="form-control" id="q10" value="{{timer10}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q11">Question 11</label>
+              <input #q11 type="number" class="form-control" id="q11" value="{{timer11}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q12">Question 12</label>
+              <input #q12 type="number" class="form-control" id="q12" value="{{timer12}}">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q13">Question 13</label>
+              <input #q13 type="number" class="form-control" id="q13" value="{{timer13}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q14">Question 14</label>
+              <input #q14 type="number" class="form-control" id="q14" value="{{timer14}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q15">Question 15</label>
+              <input #q15 type="number" class="form-control" id="q15" value="{{timer15}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q16">Question 16</label>
+              <input #q16 type="number" class="form-control" id="q16" value="{{timer16}}">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q17">Question 17</label>
+              <input #q17 type="number" class="form-control" id="q17" value="{{timer17}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q18">Question 18</label>
+              <input #q18 type="number" class="form-control" id="q18" value="{{timer18}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q19">Question 19</label>
+              <input #q19 type="number" class="form-control" id="q19" value="{{timer19}}">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label for="q20">Question 20</label>
+              <input #q20 type="number" class="form-control" id="q20" value="{{timer20}}">
+            </div>
+          </div>
+        </div>
+        <button style="float: right;" type="button" class="btn btn-success" (click)="onSaveTimers()">Save</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
