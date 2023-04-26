@@ -1,3 +1,4 @@
 texto added
 
 changes to add to stash and then to a new branch
+another changes to test cherry pick
